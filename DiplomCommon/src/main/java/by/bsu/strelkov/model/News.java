@@ -48,7 +48,7 @@ public class News implements Serializable {
 	@ManyToMany
     @JoinTable(name="news_author", 
                 joinColumns={@JoinColumn(name="news_id")}, 
-                inverseJoinColumns={@JoinColumn(name="auhtor_id")})
+                inverseJoinColumns={@JoinColumn(name="author_id")})
 	private List<Author> authors;
     
     @ManyToMany(cascade = {CascadeType.ALL})

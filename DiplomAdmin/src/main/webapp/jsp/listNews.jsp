@@ -22,11 +22,11 @@
 								code="label.chooseAuthor" /></option>
 						<c:forEach var="author" items="${listAuthor}">
 								<c:choose>
-									<c:when test="${author.authorId == filterAuthor}">
-										<option selected value="${author.authorId}">${author.authorName}</option>
+									<c:when test="${author.id == filterAuthor}">
+										<option selected value="${author.id}">${author.name}</option>
 									</c:when>
 									<c:otherwise>
-										<option value="${author.authorId}">${author.authorName}</option>
+										<option value="${author.id}">${author.name}</option>
 									</c:otherwise>
 								</c:choose>
 						</c:forEach>
@@ -42,13 +42,13 @@
 						</div>
 						<div id="checkboxes">
 							<c:forEach var="tag" items="${listTags}">
-								<label for="${tag.tagId}">
+								<label for="${tag.id}">
 									<c:choose>
-											<c:when	test="${filterTags.contains(tag.tagId)}">
-												<input type="checkbox" checked name="selectTags" value="${tag.tagId}"/>${tag.tagName}
+											<c:when	test="${filterTags.contains(tag.id)}">
+												<input type="checkbox" checked name="selectTags" value="${tag.id}"/>${tag.name}
 											</c:when> 
 											<c:otherwise>
-												<input type="checkbox" name="selectTags" value="${tag.tagId}"/>${tag.tagName}
+												<input type="checkbox" name="selectTags" value="${tag.id}"/>${tag.name}
 											</c:otherwise> 
 									</c:choose>
 								</label>
@@ -72,38 +72,38 @@
 		<table>
 			<c:forEach var="news" items="${listNews}" varStatus="status">
 				<tr>
-					<td width="60%"><b>${news.news.title}</b></td>
-					<td align="left" width="10%">(by ${news.author.authorName})</td>
+					<td width="60%"><b>${news.title}</b></td>
+					<td align="left" width="10%">(by ${news.author.name})</td>
 					<td align="right" width="20%">
 						<p class="date">
 							<spring:message var="dateStyle" code="pattern.date"/>
-							<fmt:formatDate value="${news.news.modificationDate}" pattern="${dateStyle}"/>
+							<fmt:formatDate value="${news.modificationDate}" pattern="${dateStyle}"/>
 						</p>
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2" align="left" width="90%">${news.news.shortText}</td>
+					<td colspan="2" align="left" width="90%">${news.shortText}</td>
 					<td></td>
 				</tr>
 				<tr>
 					<td align="right">
 						<p class="tags">
-							<c:forEach var="tag" items="${news.listTags}">
-								${tag.tagName}
+							<c:forEach var="tag" items="${news.tags}">
+								${tag.name}
 							</c:forEach>
 						</p>
 					</td>
 					<td align="left">
-						<a href="${pageContext.request.contextPath}/view/${startNews+status.index}/${news.news.newsId}" class="comments">
-							<spring:message code="label.comments">(${news.commentsCount})
+						<a href="${pageContext.request.contextPath}/view/${startNews+status.index}/${news.id}" class="comments">
+							<spring:message code="label.comments">()
 							</spring:message>
 						</a>
 					</td>
 					<td align="right">
-						<a href="${pageContext.request.contextPath}/editNews/${startNews+status.index}/${news.news.newsId}">
+						<a href="${pageContext.request.contextPath}/editNews/${startNews+status.index}/${news.id}">
 							<spring:message	code="label.edit" />
 						</a>
-						<input type="checkbox" name="deletedNews" value="${news.news.newsId}"/>
+						<input type="checkbox" name="deletedNews" value="${news.id}"/>
 						<input type="hidden" name="currentPage" value="${currentPage}"/>
 					</td>
 				</tr>
