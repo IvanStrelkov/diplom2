@@ -1,0 +1,39 @@
+table.layout{
+	border-collapse: collapse;
+	border-spacing:0;
+	border: 2px solid black;
+	height: 100%;
+	width: 80%;
+	margin-left:10%; 
+    margin-right:10%;
+	height: 100%;
+	align: center;
+}
+tr.border_bottom{
+  position: relative;
+  border-bottom:2px solid black;
+}
+#border{
+	margin-left: 1%;
+	margin-right: 1%;
+	border: 1px solid silver; 
+	height: 98%;
+	width: 98%;
+}
+#border-pagination{
+	margin-left: 1%;
+	matgin-right: 1%;
+	border-left: 1px solid silver; 
+	border-right: 1px solid silver;
+	border-bottom: 1px solid silver;
+	height: 98%;
+	width: 98%;
+}
+table.login{
+	margin-top: 20%;
+	margin-left: 40%;
+}
+table.body{
+	height: 100%;
+	width: 100%;
+}

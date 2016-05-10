@@ -1,0 +1,45 @@
+table.back {
+	width: 100%;
+	vertical-align: top;
+	color: #0000ff;
+}
+
+table.news {
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+table.pagination {
+	width: 100%;
+	vertical-align: bottom;
+	margin-bottom: 0px;
+}
+
+table.comments {
+	width: 50%;
+	margin-left: 5%;
+}
+
+td.commentText {
+	background-color: silver;
+}
+
+p.date {
+	text-decoration: underline;
+}
+
+textarea {
+	width: 100%;
+}
+
+button {
+	height: 40px;
+}
+
+#deleteComment {
+	float: right;
+	width: 20px;
+	height: 20px;
+	background-color: silver;
+}

@@ -1,0 +1,14 @@
+table.menu{
+	align: left;
+	width: 100%;
+	margin-top: 0%;
+	border-bottom:20px solid silver;
+	border-left:20px solid silver;
+	border-right:20px solid silver;
+}
+ul{
+	list-style: circle;
+}
+a.strong{
+	font-weight: bold;
+}

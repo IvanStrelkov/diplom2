@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<news news_id="1" short_text="short1" full_text="full1" title="title1" 
+			creation_date="2015-03-03 09:55:00" modification_date="2015-03-03"/>
+	<tag tag_name="test tag"/>
+	<tag tag_name="tag2"/>
+	<tag tag_name="tag3"/>
+	<tag tag_name="tag4"/>
+</dataset>

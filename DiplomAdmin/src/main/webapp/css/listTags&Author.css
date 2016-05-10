@@ -1,0 +1,26 @@
+.link {
+    margin: 0;
+    border: 0;
+    background: none;
+    overflow: visible;
+    color: blue;
+    cursor: pointer;
+}
+table.edit{
+	margin-top: 3%;
+	margin-left: 5%;
+}
+table.save{
+	margin-top: 7%;
+	margin-left: 5%;
+}
+[id^="updateButton"]{
+	display: none;
+}
+[id^="removeButton"]{
+	display: none;
+}
+p.edit{
+	color: blue;
+	cursor:pointer;
+}

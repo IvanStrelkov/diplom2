@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<news short_text="short1" full_text="full1" title="title1" creation_date="2015-04-04 09:55:00" modification_date="2015-03-03"/>
+	<news short_text="short2" full_text="full2" title="title2" creation_date="2014-03-03 09:55:00" modification_date="2014-03-03"/>
+	<news short_text="short3" full_text="full3" title="title3" creation_date="2015-03-03 09:55:00" modification_date="2015-03-03"/>
+	<news short_text="short4" full_text="full4" title="title4" creation_date="2015-03-03 09:55:00" modification_date="2015-03-03"/>
+	<news short_text="short5" full_text="full5" title="title5" creation_date="2015-04-04 09:55:00" modification_date="2015-04-04"/>
+	<news short_text="test short" full_text="test full" title="test title" creation_date="2015-04-04 09:55:00" modification_date="2015-04-04"/>
+</dataset>

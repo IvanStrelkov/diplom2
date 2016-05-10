@@ -1,0 +1,16 @@
+h1.header{
+	margin-top: 1%;
+	margin-left: 5%;
+	color: #004080;
+}
+a{
+	color: #0000ff;
+	margin-top: 6%;
+	align: right;
+	vertical-align: bottom;
+}
+table.header{
+	width: 100%;
+	cellpadding: 2;
+	height: 20%;
+}

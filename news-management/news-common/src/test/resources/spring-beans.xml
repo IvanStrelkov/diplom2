@@ -1,0 +1,55 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="newsVOService" class="com.epam.newsmanagement.service.impl.NewsVOServiceImpl">
+		<property name="authorService" ref="authorService" />
+		<property name="commentService" ref="commentService" />
+		<property name="newsService" ref="newsService" />
+		<property name="tagService" ref="tagService" />
+	</bean>
+
+	<bean id="newsService" class="com.epam.newsmanagement.service.impl.NewsServiceImpl">
+		<property name="newsDAO" ref="newsDAO" />
+	</bean>
+
+	<bean id="newsDAO" class="com.epam.newsmanagement.dao.impl.NewsDAOImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="tagService" class="com.epam.newsmanagement.service.impl.TagServiceImpl">
+		<property name="tagDAO" ref="tagDAO" />
+	</bean>
+
+	<bean id="tagDAO" class="com.epam.newsmanagement.dao.impl.TagDAOImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="authorService" class="com.epam.newsmanagement.service.impl.AuthorServiceImpl">
+		<property name="authorDAO" ref="authorDAO" />
+	</bean>
+
+	<bean id="authorDAO" class="com.epam.newsmanagement.dao.impl.AuthorDAOImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="commentService" class="com.epam.newsmanagement.service.impl.CommentServiceImpl">
+		<property name="commentDAO" ref="commentDAO" />
+	</bean>
+
+	<bean id="commentDAO" class="com.epam.newsmanagement.dao.impl.CommentDAOImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="dbUnitDatabaseConfig" class="com.github.springtestdbunit.bean.DatabaseConfigBean">
+		<property name="datatypeFactory">
+			<bean class="org.dbunit.ext.oracle.OracleDataTypeFactory" />
+		</property>
+	</bean>
+	<bean id="dbUnitDatabaseConnection"
+		class="com.github.springtestdbunit.bean.DatabaseDataSourceConnectionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="databaseConfig" ref="dbUnitDatabaseConfig" />
+	</bean>
+</beans>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<news news_id="2" short_text="short2" full_text="full2" title="title2" creation_date="2014-03-03 09:55:00" modification_date="2014-03-03"/>
+	<news news_id="3" short_text="short3" full_text="full3" title="title3" creation_date="2015-03-03 09:55:00" modification_date="2015-03-03"/>
+	<news news_id="4" short_text="short4" full_text="full4" title="title4" creation_date="2015-03-03 09:55:00" modification_date="2015-03-03"/>
+	<news news_id="5" short_text="short5" full_text="full5" title="title5" creation_date="2015-04-04 09:55:00" modification_date="2015-04-04"/>
+	
+	<author author_id="1" name="author1"/>
+	<author author_id="2" name="author2"/>
+	<author author_id="3" name="author3"/>
+	<author author_id="4" name="author4"/>
+	
+	<tag tag_id="1" tag_name="tag1"/>
+	<tag tag_id="2" tag_name="tag2"/>
+	<tag tag_id="3" tag_name="tag3"/>
+	<tag tag_id="4" tag_name="tag4"/>
+	
+	<comments comment_id="3" comment_text="Text3" creation_date="2013-03-03 06:55:00" news_id="2"/>
+	<comments comment_id="4" comment_text="Text4" creation_date="2012-03-03 04:55:00" news_id="2"/>
+	<comments comment_id="5" comment_text="Text5" creation_date="2013-03-03 06:55:00" news_id="2"/>
+	<comments comment_id="6" comment_text="Text6" creation_date="2012-03-03 04:55:00" news_id="2"/>
+	<comments comment_id="7" comment_text="Text7" creation_date="2013-03-03 06:55:00" news_id="3"/>
+	<comments comment_id="8" comment_text="Text8" creation_date="2012-03-03 04:55:00" news_id="4"/>
+	<comments comment_id="9" comment_text="Text9" creation_date="2012-03-03 04:55:00" news_id="4"/>
+	<comments comment_id="10" comment_text="Text10" creation_date="2012-03-03 04:55:00" news_id="4"/>
+	
+	<news_tag news_id="2" tag_id="1"/>
+	<news_tag news_id="2" tag_id="2"/>
+	<news_tag news_id="2" tag_id="3"/>
+	<news_tag news_id="3" tag_id="2"/>
+	<news_tag news_id="3" tag_id="3"/>
+	<news_tag news_id="4" tag_id="4"/>
+	
+	<news_author news_id="2" author_id="3"/>
+	<news_author news_id="2" author_id="4"/>
+	<news_author news_id="3" author_id="1"/>
+	<news_author news_id="3" author_id="2"/>
+	<news_author news_id="4" author_id="3"/>
+	<news_author news_id="4" author_id="4"/>
+	<news_author news_id="5" author_id="1"/>
+	<news_author news_id="5" author_id="2"/>
+</dataset>
