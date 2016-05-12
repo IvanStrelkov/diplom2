@@ -1,7 +1,6 @@
 package by.bsu.strelkov.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -45,11 +45,11 @@ public class News implements Serializable {
 	@Column(name = "modification_date")
 	private Date modificationDate;
 	
-	@ManyToMany
+	@ManyToOne
     @JoinTable(name="news_author", 
-                joinColumns={@JoinColumn(name="news_id")}, 
-                inverseJoinColumns={@JoinColumn(name="author_id")})
-	private List<Author> authors;
+    	joinColumns={@JoinColumn(name="news_id")}, 
+    	inverseJoinColumns={@JoinColumn(name="author_id")})
+	private Author author;
     
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name="news_tag", 
@@ -113,12 +113,11 @@ public class News implements Serializable {
 	}
 
 	public Author getAuthor() {
-		return authors.get(0);
+		return author;
 	}
 
 	public void setAuthor(Author author) {
-		this.authors = new ArrayList<Author>();
-		this.authors.add(author);
+		this.author = author;
 	}
 
 	public List<Tag> getTags() {
@@ -135,13 +134,5 @@ public class News implements Serializable {
 
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
-	}
-
-	public List<Author> getAuthors() {
-		return authors;
-	}
-
-	public void setAuthors(List<Author> authors) {
-		this.authors = authors;
 	}
 }

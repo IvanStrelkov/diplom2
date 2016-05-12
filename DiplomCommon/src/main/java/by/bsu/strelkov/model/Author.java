@@ -3,11 +3,13 @@ package by.bsu.strelkov.model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -28,7 +30,10 @@ public class Author implements Serializable{
 	@Column(name = "name")
 	private String name;
 	
-	@ManyToMany(mappedBy="authors")
+	@OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name="news_author", 
+            joinColumns={@JoinColumn(name="author_id")}, 
+            inverseJoinColumns={@JoinColumn(name="news_id")})
 	private List<News> news;
 
 	public Author() {

@@ -7,6 +7,8 @@ import by.bsu.strelkov.model.News;
 
 public interface NewsDAO extends CrudDAO<News> {
 
+	public List<News> search(int start, int count, List<Long> tagsId, long authorId);
+	
 	public List<News> getList(long authorId, long start, long count) throws DiplomException;
 
 	public List<News> getList(List<Long> listId, long start, long count)	throws DiplomException;
