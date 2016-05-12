@@ -49,4 +49,9 @@ public class NewsServiceImpl extends CrudServiceImpl<News> implements NewsServic
 		return newsDAO.getNumberNews(authorId, listId);
 	}
 
+	@Override
+	public List<News> search(int start, int count, List<Long> tagsId, long authorId) {
+		return newsDAO.search(start, count, tagsId, authorId);
+	}
+
 }

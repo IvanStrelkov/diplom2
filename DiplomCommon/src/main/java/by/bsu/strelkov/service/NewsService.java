@@ -20,5 +20,6 @@ public interface NewsService extends CrudService<News> {
 	public int getNumberNews(List<Long> listId) throws DiplomException;
 	
 	public int getNumberNews(long authorId, List<Long> listId) throws DiplomException;
-
+	
+	public List<News> search(int start, int count, List<Long> tagsId, long authorId);
 }
