@@ -6,7 +6,6 @@
 <head>
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/listTags&Author.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/css/list.css"/>">
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-2.1.0.js"></script>
 
