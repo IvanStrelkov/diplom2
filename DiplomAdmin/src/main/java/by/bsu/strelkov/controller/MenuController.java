@@ -3,7 +3,6 @@ package by.bsu.strelkov.controller;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,10 +18,10 @@ public class MenuController{
 	@RequestMapping(value = "/")
 	public String home(Model model){
 		Locale.setDefault(Locale.ENGLISH);
-		return "redirect:/portal";
+		return "redirect:/admin/portal";
 	}
 
-	@RequestMapping(value = "/portal")
+	@RequestMapping(value = "/admin/portal")
 	public String portal(Model model){
 		return "portal";
 	}
@@ -34,28 +33,23 @@ public class MenuController{
 		return "login";
 	}
 
-	@RequestMapping(value = "/listNews")
-	public String viewListNews(HttpSession session){
-		return "redirect:/portal";
-	}
-
-	@RequestMapping(value = "/listTags")
+	@RequestMapping(value = "/admin/listTags")
 	public String viewListTags( ModelMap model) throws DiplomException{
 		return "listTags";
 	}
 
-	@RequestMapping(value = "/listAuthors")
+	@RequestMapping(value = "/admin/listAuthors")
 	public String viewListAuthors( ModelMap model) throws DiplomException{
 		return "listAuthors";
 	}
 	
-	@RequestMapping(value = "/view/{news_id}")
+	@RequestMapping(value = "/admin/view/{news_id}")
 	public String viewNews(ModelMap model, @PathVariable long news_id) {
 		model.addAttribute("news_id", news_id);
 		return "viewNews";
 	}
 	
-	@RequestMapping(value = "/addNews")
+	@RequestMapping(value = "/admin/addNews")
 	public String addNews(ModelMap model) {
 		return "viewNews";
 	}

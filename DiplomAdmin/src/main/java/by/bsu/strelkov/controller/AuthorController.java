@@ -16,7 +16,7 @@ import by.bsu.strelkov.model.Author;
 import by.bsu.strelkov.service.AuthorService;
 
 @Controller
-@RequestMapping("/author")
+@RequestMapping("/admin/author")
 public class AuthorController {
 	
 	@Autowired

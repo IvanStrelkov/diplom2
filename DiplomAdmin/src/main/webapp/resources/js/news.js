@@ -1,4 +1,4 @@
-var SITE_URL = 	"http://localhost:8080/DiplomAdmin";
+var SITE_URL = 	"http://localhost:8080/DiplomAdmin/admin";
 var currentNews;
 
 $(document).ready(function(){

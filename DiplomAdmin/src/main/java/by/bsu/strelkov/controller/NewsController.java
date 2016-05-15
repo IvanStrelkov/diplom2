@@ -18,7 +18,7 @@ import by.bsu.strelkov.model.News;
 import by.bsu.strelkov.service.NewsService;
 
 @Controller
-@RequestMapping("/news")
+@RequestMapping("/admin/news")
 public class NewsController {
 
 	@Autowired

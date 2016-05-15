@@ -16,7 +16,7 @@ import by.bsu.strelkov.model.Tag;
 import by.bsu.strelkov.service.TagService;
 
 @Controller
-@RequestMapping("/tag")
+@RequestMapping("/admin/tag")
 public class TagController {
 	
 	@Autowired

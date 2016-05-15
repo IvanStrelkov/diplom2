@@ -17,7 +17,7 @@ import by.bsu.strelkov.model.News;
 import by.bsu.strelkov.service.CommentService;
 
 @Controller
-@RequestMapping("/comment")
+@RequestMapping("/admin/comment")
 public class CommentController {
 
 	@Autowired
