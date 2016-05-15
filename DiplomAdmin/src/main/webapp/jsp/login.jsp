@@ -3,11 +3,10 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
-	<head>
-		<style>
-			<%@include file='/css/style.css' %>
-		</style>
-	</head>
+<head>
+<c:url var="style_css" value="/resources/css/style.css"/>
+<link rel="stylesheet" href="${style_css}"/>
+</head>
 <body>
 <c:if test="${not empty param.error}">
 	<font color="red"> <spring:message code="label.loginerror" />

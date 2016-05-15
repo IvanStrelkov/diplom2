@@ -6,16 +6,11 @@ http://www.springframework.org/schema/security
 http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
 	<http access-denied-page="/jsp/error/error.jsp">
-		<intercept-url pattern="/list/*" access="ROLE_ADMIN" />
-		<intercept-url pattern="/view/*" access="ROLE_ADMIN" />
+		<intercept-url pattern="/portal" access="ROLE_ADMIN" />
 		<intercept-url pattern="/editNews/*" access="ROLE_ADMIN" />
-		<intercept-url pattern="/saveNews" access="ROLE_ADMIN" />
-		<intercept-url pattern="/delete" access="ROLE_ADMIN" />
-		<intercept-url pattern="/addNews" access="ROLE_ADMIN" />
-		<intercept-url pattern="/filter" access="ROLE_ADMIN" />
 		<form-login 
 			login-page="/login" 
-			default-target-url="/list/1" 
+			default-target-url="/portal" 
 			authentication-failure-url="/login?error=true" 
 		/>
 		<logout logout-url="/logout" logout-success-url="/" />

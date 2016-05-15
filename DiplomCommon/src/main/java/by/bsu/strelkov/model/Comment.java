@@ -10,9 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "comment")
+@Table(name = "COMMENT")
 public class Comment implements Serializable {
 
 	/**
@@ -21,18 +24,22 @@ public class Comment implements Serializable {
 	private static final long serialVersionUID = -5840022723556562937L;
 
 	@Id
-	@Column(name = "id")
+	@Column(name = "ID")
 	@GeneratedValue
 	private long id;
 	
-	@Column(name = "text")
+	@Column(name = "TEXT")
 	private String text;
 	
-	@Column(name = "creation_date")
+	@Column(name = "CREATION_DATE")
 	private Date creationDate;
+	
+	@Transient
+	private long newsId;
 
+	@JsonIgnore
 	@ManyToOne
-	@JoinColumn(name = "news_id", nullable = false)
+	@JoinColumn(name = "NEWS_ID", nullable = false)
 	private News news;
 
 	public Comment() {
@@ -69,5 +76,13 @@ public class Comment implements Serializable {
 
 	public void setNews(News news) {
 		this.news = news;
+	}
+
+	public long getNewsId() {
+		return newsId;
+	}
+
+	public void setNewsId(long newsId) {
+		this.newsId = newsId;
 	}
 }

@@ -13,8 +13,10 @@ import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name = "author")
+@Table(name = "AUTHOR")
 public class Author implements Serializable{
 
 	/**
@@ -23,17 +25,18 @@ public class Author implements Serializable{
 	private static final long serialVersionUID = 2240703515643099533L;
 
 	@Id
-	@Column(name = "id")
+	@Column(name = "ID")
 	@GeneratedValue
 	private long id;
 	
-	@Column(name = "name")
+	@Column(name = "NAME")
 	private String name;
 	
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name="news_author", 
-            joinColumns={@JoinColumn(name="author_id")}, 
-            inverseJoinColumns={@JoinColumn(name="news_id")})
+    @JoinTable(name="NEWS_AUTHOR", 
+            joinColumns={@JoinColumn(name="AUTHOR_ID")}, 
+            inverseJoinColumns={@JoinColumn(name="NEWS_ID")})
 	private List<News> news;
 
 	public Author() {

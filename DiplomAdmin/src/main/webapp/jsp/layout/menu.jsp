@@ -3,9 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-<style>
-	<%@include file='/css/menu.css' %>
-</style>
+<link rel="stylesheet" href="<c:url value="/resources/css/menu.css"/>"/>
 </head>
 <body>
 	<table class="menu">

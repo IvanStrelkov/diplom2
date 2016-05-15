@@ -1,14 +1,17 @@
-CREATE TABLE `user` (
-	`login` VARCHAR(50) NOT NULL,
-	`password` VARCHAR(50) NULL DEFAULT NULL,
-	`id` VARCHAR(50) NOT NULL DEFAULT '',
+CREATE TABLE `news` (
+	`id` INT(10) NOT NULL AUTO_INCREMENT,
+	`short_text` VARCHAR(50) NOT NULL,
+	`full_text` VARCHAR(50) NOT NULL,
+	`title` VARCHAR(50) NOT NULL,
+	`creation_date` TIMESTAMP NOT NULL,
+	`modification_date` TIMESTAMP NOT NULL,
 	PRIMARY KEY (`id`)
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB;
 
 CREATE TABLE `tag` (
-	`id` INT(10) NOT NULL DEFAULT '0',
+	`id` INT(10) NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(50) NULL DEFAULT NULL,
 	PRIMARY KEY (`id`)
 )
@@ -16,7 +19,7 @@ COLLATE='utf8_general_ci'
 ENGINE=InnoDB;
 
 CREATE TABLE `author` (
-	`id` INT(10) NOT NULL DEFAULT '0',
+	`id` INT(10) NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(50) NULL DEFAULT NULL,
 	PRIMARY KEY (`id`)
 )
@@ -24,9 +27,9 @@ COLLATE='utf8_general_ci'
 ENGINE=InnoDB;
 
 CREATE TABLE `comment` (
-	`id` INT(10) NOT NULL DEFAULT '0',
-	`text` INT(10) NULL DEFAULT NULL,
-	`creation_date` INT(10) NULL DEFAULT NULL,
+	`id` INT(10) NOT NULL AUTO_INCREMENT,
+	`text` VARCHAR(50) NOT NULL,
+	`creation_date` TIMESTAMP NOT NULL,
 	`news_id` INT(10) NULL DEFAULT NULL,
 	PRIMARY KEY (`id`),
 	INDEX `FK_comment_news` (`news_id`),
@@ -36,23 +39,19 @@ COLLATE='utf8_general_ci'
 ENGINE=InnoDB;
 
 CREATE TABLE `news_author` (
-	`news_id` INT(10) NULL DEFAULT NULL,
-	`author_id` INT(10) NULL DEFAULT NULL,
-	INDEX `FK__news` (`news_id`),
-	INDEX `FK__author` (`author_id`),
-	CONSTRAINT `FK__author` FOREIGN KEY (`author_id`) REFERENCES `author` (`id`) ON DELETE CASCADE,
-	CONSTRAINT `FK__news` FOREIGN KEY (`news_id`) REFERENCES `news` (`id`) ON DELETE CASCADE
+	`news_id` INT(10) NOT NULL,
+	`author_id` INT(10) NOT NULL,
+	CONSTRAINT `FK__news` FOREIGN KEY (`news_id`) REFERENCES `news` (`id`),
+	CONSTRAINT `FK__author` FOREIGN KEY (`author_id`) REFERENCES `author` (`id`)
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB;
 
 CREATE TABLE `news_tag` (
-	`news_id` INT(10) NULL DEFAULT NULL,
-	`tag_id` INT(10) NULL DEFAULT NULL,
-	INDEX `FK_news_tag_tag` (`tag_id`),
-	INDEX `FK_news_tag_news` (`news_id`),
+	`news_id` INT(10) NOT NULL,
+	`tag_id` INT(10) NOT NULL,
 	CONSTRAINT `FK_news_tag_news` FOREIGN KEY (`news_id`) REFERENCES `news` (`id`),
-	CONSTRAINT `FK_news_tag_tag` FOREIGN KEY (`tag_id`) REFERENCES `tag` (`id`) ON DELETE CASCADE
+	CONSTRAINT `FK_news_tag_tag` FOREIGN KEY (`tag_id`) REFERENCES `tag` (`id`)
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB;
@@ -60,15 +59,16 @@ ENGINE=InnoDB;
 CREATE TABLE `user` (
 	`login` VARCHAR(50) NOT NULL,
 	`password` VARCHAR(50) NULL DEFAULT NULL,
-	`id` VARCHAR(50) NOT NULL DEFAULT '',
+	`id` INT(10) NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (`id`)
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB;
 
 CREATE TABLE `user_role` (
-	`id` INT(10) NOT NULL,
-	`role` VARCHAR(10) NOT NULL
+	`id` INT(10) NOT NULL AUTO_INCREMENT,
+	`role` VARCHAR(10) NOT NULL,
+	PRIMARY KEY (`id`)
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB;

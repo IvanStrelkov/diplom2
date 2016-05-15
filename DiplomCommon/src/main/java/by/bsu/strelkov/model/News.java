@@ -4,11 +4,11 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -16,8 +16,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 @Entity
-@Table(name = "news")
+@Table(name = "NEWS")
 public class News implements Serializable {
 
 	/**
@@ -26,38 +29,40 @@ public class News implements Serializable {
 	private static final long serialVersionUID = -2922439210937196808L;
 
 	@Id
-	@Column(name = "id")
+	@Column(name = "ID")
 	@GeneratedValue
 	private long id;
 
-	@Column(name = "short_text")
+	@Column(name = "SHORT_TEXT")
 	private String shortText;
 	
-	@Column(name = "full_text")
+	@Column(name = "FULL_TEXT")
 	private String fullText;
 
-	@Column(name = "title")
+	@Column(name = "TITLE")
 	private String title;
 
-	@Column(name = "creation_date")
+	@Column(name = "CREATION_DATE")
 	private Date creationDate;
 
-	@Column(name = "modification_date")
+	@Column(name = "MODIFICATION_DATE")
 	private Date modificationDate;
 	
-	@ManyToOne
-    @JoinTable(name="news_author", 
-    	joinColumns={@JoinColumn(name="news_id")}, 
-    	inverseJoinColumns={@JoinColumn(name="author_id")})
+	@ManyToOne(fetch = FetchType.EAGER)
+    @JoinTable(name="NEWS_AUTHOR", 
+    	joinColumns={@JoinColumn(name="NEWS_ID")}, 
+    	inverseJoinColumns={@JoinColumn(name="AUTHOR_ID")})
 	private Author author;
     
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(name="news_tag", 
-                joinColumns={@JoinColumn(name="news_id")}, 
-                inverseJoinColumns={@JoinColumn(name="tag_id")})
+    @ManyToMany(fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
+    @JoinTable(name="NEWS_TAG", 
+                joinColumns={@JoinColumn(name="NEWS_ID")}, 
+                inverseJoinColumns={@JoinColumn(name="TAG_ID")})
     private List<Tag> tags;
     
-	@OneToMany(mappedBy = "news")
+	@OneToMany(mappedBy = "news", fetch = FetchType.EAGER)
+	@Fetch(value = FetchMode.SUBSELECT)
     private List<Comment> comments;
 
 	public News() {

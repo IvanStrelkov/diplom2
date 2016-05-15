@@ -1,0 +1,88 @@
+p.newsTitle {
+	text-align: center;
+	font-size: 30px;
+}
+
+p.newsShort {
+	font-size: 25px;
+}
+
+p.newsFull {
+	font-size: 20px;
+}
+
+p.newsAuthor {
+	font-size: 18px;
+	font-weight: bold;
+	text-align: left;
+}
+
+p.newsTags {
+	font-size: 18px;
+	font-style: italic;
+	text-align: right;
+}
+
+p.newsDate {
+	font-size: 15px;
+	font-style: italic;
+	font-weight: bold;
+	text-align: center;
+}
+td.buttons {
+	text-align: right;
+}
+
+td.commentButton {
+	text-align: right;	
+}
+
+table.back {
+	width: 100%;
+	vertical-align: top;
+	color: #0000ff;
+}
+
+table.news {
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+table.addComment {
+	width: 50%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+table.pagination {
+	width: 100%;
+	vertical-align: bottom;
+	margin-bottom: 0px;
+}
+
+table.comments {
+	width: 50%;
+	margin-left: 5%;
+}
+
+td.commentText {
+	background-color: silver;
+}
+
+p.date {
+	text-decoration: underline;
+}
+textarea {
+	width: 100%;
+}
+
+button {
+	height: 40px;
+}
+
+#deleteComment {
+	float: right;
+	width: 20px;
+	height: 20px;
+	background-color: silver;
+}

@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "tag")
 public class Tag implements Serializable {
@@ -27,6 +29,7 @@ public class Tag implements Serializable {
 	@Column(name = "name")
 	private String name;
 	
+	@JsonIgnore
 	@ManyToMany(mappedBy="tags")
 	private List<News> news;
 

@@ -14,13 +14,12 @@
 		<put-attribute name="menu" value=""/>
 	</definition>
 	
-	<definition name="listNews" extends="baseLayout">
+	<definition name="portal" extends="baseLayout">
 		<put-attribute name="body" value="/jsp/listNews.jsp" />
-		<put-attribute name="pagination" value="/jsp/listPagination.jsp"/>
 	</definition>
 	
-	<definition name="editNews" extends="baseLayout">
-		<put-attribute name="body" value="/jsp/editNews.jsp" />
+	<definition name="viewNews" extends="baseLayout">
+		<put-attribute name="body" value="/jsp/news.jsp" />
 	</definition>
 
 	<definition name="listAuthors" extends="baseLayout">
@@ -29,10 +28,5 @@
 	
 	<definition name="listTags" extends="baseLayout">
 		<put-attribute name="body" value="/jsp/listTags.jsp" />
-	</definition>
-	
-	<definition name="view" extends="baseLayout">
-		<put-attribute name="body" value="/jsp/view.jsp" />
-		<put-attribute name="pagination" value="/jsp/viewPagination.jsp"/>
 	</definition>
 </tiles-definitions>
