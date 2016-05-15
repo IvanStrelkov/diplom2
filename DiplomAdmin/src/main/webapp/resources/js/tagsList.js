@@ -23,17 +23,19 @@ function drawSaveTag() {
 	var addTag = $('#addTagDiv');
 	addTag.append('<table class="save"><tr><td>' + $('#addTag').val() + ': </td><td>' + 
 			'<input id=inputTag0 type="text" value="" size="30"></td>'+
-			'<td><button onclick="saveTag()">' + $('#buttonSave').val() + '</button></td></tr></table>');
+			'<td><button class="btn btn-primary btn-space" onclick="saveTag()">' + $('#buttonSave').val() + '</button></td></tr></table>');
 }
 
 function drawTag(tag) {
 	var tags = $('#listTagsDiv');
 	var part1 = '<table id="tableTag' + tag.id + '" class="edit"><tr><td>' + $('#tagLabel').val() + ': </td><td>' + '<input id=inputTag' + tag.id + ' type="text" value="' + 
 		tag.name +'" size="30" disabled></td>';
-	var part2 = '<td><button id="buttonEdit' + tag.id + '" onclick="editTag(' + tag.id + ')">' + $('#buttonEdit').val() + '</button></td>'+
-		'<td><button id="buttonUpdate' + tag.id + '" hidden="true" onclick="updateTag(' + tag.id + ')">' + $('#buttonUpdate').val() + '</button></td>' +
-		'<td><button id="buttonRemove' + tag.id + '" hidden="true" onclick="removeTag(' + tag.id + ')">' + $('#buttonRemove').val() + '</button></td></tr></table>';
+	var part2 = '<td><button class="btn btn-primary btn-space" id="buttonEdit' + tag.id + '" onclick="editTag(' + tag.id + ')">' + $('#buttonEdit').val() + '</button></td>'+
+		'<td><button class="btn btn-primary btn-space" id="buttonUpdate' + tag.id + '" hidden="true" onclick="updateTag(' + tag.id + ')">' + $('#buttonUpdate').val() + '</button></td>' +
+		'<td><button class="btn btn-primary btn-space" id="buttonRemove' + tag.id + '" hidden="true" onclick="removeTag(' + tag.id + ')">' + $('#buttonRemove').val() + '</button></td></tr></table>';
 	tags.append(part1 + part2);
+	$('#buttonUpdate' + tag.id).hide();
+	$('#buttonRemove' + tag.id).hide();
 }
 
 function editTag(tagId) {

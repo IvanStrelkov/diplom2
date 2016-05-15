@@ -86,3 +86,8 @@ button {
 	height: 20px;
 	background-color: silver;
 }
+
+button.btn-space {
+	margin-right: 5px;
+	margin-left: 5px;
+}

@@ -53,20 +53,22 @@ function drawViewingNews(news) {
 			'<tr><td><p class="newsAuthor">' + currentNews.author.name + '</p></td>' + '<td class="listTags">' + 
 			'<p class="newsTags">' + tags + '</p></td></tr>' +
 			'<tr><td><p class="newsDate">' + dateMessage2 + '</p></td><td><p class="newsDate">' + dateMessage1 + '</p></td>' +
-			'<tr><td></td><td class="buttons"><button onclick="editNews()">' + $("#buttonEdit").val() + '</button>' + 
-			'<button onclick="deleteNews()">' + $('#buttonRemove').val() + '</button></td></tr>'
+			'<tr><td></td><td class="buttons"><button class="btn btn-primary btn-space" onclick="editNews()">' + $("#buttonEdit").val() + '</button>' + 
+			'<button class="btn btn-primary btn-space" onclick="deleteNews()">' + $('#buttonRemove').val() + '</button></td></tr>'
 	).fadeIn();
 	$.each(news.comments, function(ind, comment) {
 		drawComment(comment);
 	})
 	$('#divAddComment').append(
 			'<table class="addComment"><tr><td colspan="3"><textarea id="commentText"></textarea></td></tr>' + 
-			'<tr><td colspan="2"></td><td class="commentButton"><button onclick="addComment()">' + $('#addCommentButton').val() + '</button></td></tr></table>'
+			'<tr><td colspan="2"></td><td class="commentButton"><button class="btn btn-primary btn-space" onclick="addComment()">' + $('#addCommentButton').val() + '</button></td></tr></table>'
 	)
 }
 
 function editNews() {
 	$("#divNews").empty();
+	$("#divAddComment").empty();
+	$("#divComments").empty();
 	drawEditingNews();
 }
 
@@ -122,8 +124,8 @@ function drawEditingNews() {
 	$("#mutliSelectTags").multiselect('refresh');
 
 	$('#newsButtons').empty().append(
-			'<button onclick="saveNews()">' + $('#buttonUpdate').val() + '</button>' + 
-			'<button onclick="cancelNews()">' + $('#buttonCancel').val() + '</button>'
+			'<button  class="btn btn-primary btn-space" onclick="saveNews()">' + $('#buttonUpdate').val() + '</button>' + 
+			'<button  class="btn btn-primary btn-space" onclick="cancelNews()">' + $('#buttonCancel').val() + '</button>'
 	);
 	$("#editTable").show();
 }
@@ -155,7 +157,7 @@ function drawAddingNews() {
 	drawAllAuthor();
 
 	$('#newsButtons').append(
-			'<button onclick="saveNews()">' + $('#buttonSave').val() + '</button>'
+			'<button  class="btn btn-primary btn-space" onclick="saveNews()">' + $('#buttonSave').val() + '</button>'
 	);
 	$("#editTable").show();
 }
@@ -266,7 +268,8 @@ function drawComment(comment) {
 	$("#divComments").append(
 			'<table class="addComment" id = "commentTable' + comment.id + '"><tr><td class="commentText" colspan="3">' + comment.text + '</td></tr>' + 
 			'<td class="commentDate">' + date + '</td>' + '<td></td>' + 
-			'<td class="commentButton"><button onclick="deleteComment(' + comment.id + ')">' + $("#deleteCommentButton").val() + '</button></td></tr></table>'
+			'<td class="commentButton"><button class="btn btn-primary btn-xs" onclick="deleteComment(' + comment.id + ')">' +
+			'<span class="glyphicon glyphicon-remove"></span></button></td></tr></table>'
 	);
 }
 

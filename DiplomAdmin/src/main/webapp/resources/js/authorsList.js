@@ -23,17 +23,19 @@ function drawSaveAuthor() {
 	var addAuthor = $('#addAuthorDiv');
 	addAuthor.append('<table class="save"><tr><td>' + $('#addAuthor').val() + ': </td><td>' + 
 			'<input id=inputAuthor0 type="text" value="" size="30"></td>'+
-			'<td><button onclick="saveAuthor()">' + $('#buttonSave').val() + '</button></td></tr></table>');
+			'<td><button class= "btn btn-primary btn-space" onclick="saveAuthor()">' + $('#buttonSave').val() + '</button></td></tr></table>');
 }
 
 function drawAuthor(author) {
 	var authors = $('#listAuthorsDiv');
 	var part1 = '<table id="tableAuthor' + author.id + '" class="edit"><tr><td>' + $('#authorLabel').val() + ': </td><td>' + '<input id=inputAuthor' + author.id + ' type="text" value="' + 
 		author.name +'" size="30" disabled></td>';
-	var part2 = '<td><button id="buttonEdit' + author.id + '" onclick="editAuthor(' + author.id + ')">' + $('#buttonEdit').val() + '</button></td>'+
-		'<td><button id="buttonUpdate' + author.id + '" hidden="true" onclick="updateAuthor(' + author.id + ')">' + $('#buttonUpdate').val() + '</button></td>' +
-		'<td><button id="buttonRemove' + author.id + '" hidden="true" onclick="removeAuthor(' + author.id + ')">' + $('#buttonRemove').val() + '</button></td></tr></table>';
+	var part2 = '<td><button class="btn btn-primary btn-space" id="buttonEdit' + author.id + '" onclick="editAuthor(' + author.id + ')">' + $('#buttonEdit').val() + '</button></td>'+
+		'<td> <button class="btn btn-primary btn-space" id="buttonUpdate' + author.id + '" hidden="true" onclick="updateAuthor(' + author.id + ')">' + $('#buttonUpdate').val() + '</button></td>' +
+		'<td> <button class="btn btn-primary btn-space" id="buttonRemove' + author.id + '" hidden="true" onclick="removeAuthor(' + author.id + ')">' + $('#buttonRemove').val() + '</button></td></tr></table>';
 	authors.append(part1 + part2);
+	$('#buttonUpdate' + author.id).hide();
+	$('#buttonRemove' + author.id).hide();
 }
 
 function editAuthor(authorId) {

@@ -5,7 +5,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="<c:url value="/resources/css/listTags&Author.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/css/list.css"/>">
+<link rel="stylesheet" href="<c:url value="/resources/css/lib/bootstrap-multiselect.css"/>"/>
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.js"></script>
 
 <!-- Latest compiled and minified CSS -->
@@ -17,7 +17,6 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="<c:url value="/resources/js/authorsList.js" />"></script>
-<script src="<c:url value="/resources/js/listTags&Authors.js" />"></script>
 </head>
 <body>	
 	<c:set var="labelAuthor"><spring:message code="label.author"/></c:set>

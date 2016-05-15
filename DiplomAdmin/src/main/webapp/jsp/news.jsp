@@ -5,12 +5,12 @@
 <%@	taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
-<link rel="stylesheet" href="<c:url value="/resources/css/view.css"/>" />
+<link rel="stylesheet" href="<c:url value="/resources/css/news.css"/>" />
 <link rel="stylesheet" href="<c:url value="/resources/css/select.css"/>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/editNews.css"/>" />
 <link rel="stylesheet"
-	href="<c:url value="/resources/css/bootstrap-multiselect.css"/>" />
+	href="<c:url value="/resources/css/lib/bootstrap-multiselect.css"/>" />
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-2.1.0.js"></script>
 
@@ -128,8 +128,7 @@
 	<c:set var="addCommentButton">
 		<spring:message code="button.postcomment" />
 	</c:set>
-	<input id="addCommentButton" type="hidden"
-		value="${addCommentButton}" />
+	<input id="addCommentButton" type="hidden" value="${addCommentButton}" />
 
 	<div id="divNews"></div>
 	<div id="divAddComment"></div>

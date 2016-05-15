@@ -4,7 +4,11 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<link rel="stylesheet" href="<c:url value="/resources/css/header.css"/>"/>
+<link rel="stylesheet" href="<c:url value="/resources/css/layout/header.css"/>"/>
+<link rel="stylesheet" href="<c:url value="/resources/css/lib/bootstrap-multiselect.css"/>"/>
+<link rel="stylesheet" href="<c:url value="/resources/css/lib/bootstrap.css"/>"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 </head>
 <body>
  <table class="header">
@@ -15,13 +19,13 @@
  		<td align="right" width="10%" valign="bottom">
  			<security:authorize access="isAuthenticated()">
 	 			<form action="${pageContext.request.contextPath}/logout">
-	 				<button>
+	 				<button class="btn btn-primary active">
 	 					<spring:message code="button.logout"/>
 	 				</button>
 	 			</form>
 	 		</security:authorize>
- 			<a href="?language=en"><spring:message code = "label.en"/></a> 
- 			<a href="?language=ru"><spring:message code = "label.ru"/></a>
+ 			<a class="header" href="?language=en"><spring:message code = "label.en"/></a> 
+ 			<a class="header" href="?language=ru"><spring:message code = "label.ru"/></a>
  		</td>
  	</tr>
  </table>

@@ -4,10 +4,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-<link rel="stylesheet" href="<c:url value="/resources/css/select.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/css/list.css"/>"/>
+<link rel="stylesheet"
+	href="<c:url value="/resources/lib/css/bootstrap.css"/>" />
 <link rel="stylesheet" href="<c:url value="/resources/css/listNews.css"/>"/>
-<link rel="stylesheet" href="<c:url value="/resources/css/bootstrap-multiselect.css"/>"/>
+<link rel="stylesheet" href="<c:url value="/resources/css/lib/bootstrap-multiselect.css"/>"/>
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.js"></script>
 
 <!-- Latest compiled and minified CSS -->
@@ -37,10 +37,10 @@
 				    </select>
 				</td>
 				<td align="left" width="45%">
-					<button name="filter" value="filter" onclick="search()">
+					<button onclick="search()" class="btn btn-primary">
 						<spring:message code="button.search"/>
 					</button>
-					<button name="filter" value="reset" onclick="reset()">
+					<button onclick="reset()" class="btn btn-primary">
 						<spring:message code="button.reset"/>
 					</button>
 				</td>

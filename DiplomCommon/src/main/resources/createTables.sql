@@ -41,8 +41,10 @@ ENGINE=InnoDB;
 CREATE TABLE `news_author` (
 	`news_id` INT(10) NOT NULL,
 	`author_id` INT(10) NOT NULL,
-	CONSTRAINT `FK__news` FOREIGN KEY (`news_id`) REFERENCES `news` (`id`),
-	CONSTRAINT `FK__author` FOREIGN KEY (`author_id`) REFERENCES `author` (`id`)
+	INDEX `FK__news` (`news_id`),
+	INDEX `FK__author` (`author_id`),
+	CONSTRAINT `FK__news` FOREIGN KEY (`news_id`) REFERENCES `news` (`id`) ON UPDATE RESTRICT ON DELETE RESTRICT,
+	CONSTRAINT `FK__author` FOREIGN KEY (`author_id`) REFERENCES `author` (`id`) ON UPDATE RESTRICT ON DELETE RESTRICT
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB;
@@ -50,8 +52,10 @@ ENGINE=InnoDB;
 CREATE TABLE `news_tag` (
 	`news_id` INT(10) NOT NULL,
 	`tag_id` INT(10) NOT NULL,
-	CONSTRAINT `FK_news_tag_news` FOREIGN KEY (`news_id`) REFERENCES `news` (`id`),
-	CONSTRAINT `FK_news_tag_tag` FOREIGN KEY (`tag_id`) REFERENCES `tag` (`id`)
+	INDEX `FK_news_tag_news` (`news_id`),
+	INDEX `FK_news_tag_tag` (`tag_id`),
+	CONSTRAINT `FK_news_tag_news` FOREIGN KEY (`news_id`) REFERENCES `news` (`id`) ON UPDATE RESTRICT ON DELETE RESTRICT,
+	CONSTRAINT `FK_news_tag_tag` FOREIGN KEY (`tag_id`) REFERENCES `tag` (`id`) ON UPDATE RESTRICT ON DELETE RESTRICT
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB;

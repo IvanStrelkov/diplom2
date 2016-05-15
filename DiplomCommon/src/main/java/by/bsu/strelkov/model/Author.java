@@ -1,19 +1,12 @@
 package by.bsu.strelkov.model;
 
 import java.io.Serializable;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "AUTHOR")
@@ -31,13 +24,6 @@ public class Author implements Serializable{
 	
 	@Column(name = "NAME")
 	private String name;
-	
-	@JsonIgnore
-	@OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name="NEWS_AUTHOR", 
-            joinColumns={@JoinColumn(name="AUTHOR_ID")}, 
-            inverseJoinColumns={@JoinColumn(name="NEWS_ID")})
-	private List<News> news;
 
 	public Author() {
 		super();
@@ -64,12 +50,4 @@ public class Author implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public List<News> getNews() {
-		return news;
-	}
-
-	public void setNews(List<News> news) {
-		this.news = news;
-	}	
 }
