@@ -1,8 +1,8 @@
 CREATE TABLE `news` (
 	`id` INT(10) NOT NULL AUTO_INCREMENT,
-	`short_text` VARCHAR(50) NOT NULL,
-	`full_text` VARCHAR(50) NOT NULL,
-	`title` VARCHAR(50) NOT NULL,
+	`short_text` VARCHAR(1000) NOT NULL,
+	`full_text` VARCHAR(5000) NOT NULL,
+	`title` VARCHAR(500) NOT NULL,
 	`creation_date` TIMESTAMP NOT NULL,
 	`modification_date` TIMESTAMP NOT NULL,
 	PRIMARY KEY (`id`)
@@ -12,7 +12,7 @@ ENGINE=InnoDB;
 
 CREATE TABLE `tag` (
 	`id` INT(10) NOT NULL AUTO_INCREMENT,
-	`name` VARCHAR(50) NULL DEFAULT NULL,
+	`name` VARCHAR(100) NULL DEFAULT NULL,
 	PRIMARY KEY (`id`)
 )
 COLLATE='utf8_general_ci'
@@ -20,7 +20,7 @@ ENGINE=InnoDB;
 
 CREATE TABLE `author` (
 	`id` INT(10) NOT NULL AUTO_INCREMENT,
-	`name` VARCHAR(50) NULL DEFAULT NULL,
+	`name` VARCHAR(100) NULL DEFAULT NULL,
 	PRIMARY KEY (`id`)
 )
 COLLATE='utf8_general_ci'
@@ -28,7 +28,7 @@ ENGINE=InnoDB;
 
 CREATE TABLE `comment` (
 	`id` INT(10) NOT NULL AUTO_INCREMENT,
-	`text` VARCHAR(50) NOT NULL,
+	`text` VARCHAR(1000) NOT NULL,
 	`creation_date` TIMESTAMP NOT NULL,
 	`news_id` INT(10) NULL DEFAULT NULL,
 	PRIMARY KEY (`id`),

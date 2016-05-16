@@ -29,3 +29,9 @@ button.btn-space {
 	margin-right: 5px;
 	margin-left: 5px;
 }
+
+td.propertyName {
+	font-weight: bold;
+	text-align: left;
+	font-size: 14px;
+}

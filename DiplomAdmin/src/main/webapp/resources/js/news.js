@@ -54,13 +54,13 @@ function drawViewingNews(news) {
 			'<p class="newsTags">' + tags + '</p></td></tr>' +
 			'<tr><td><p class="newsDate">' + dateMessage2 + '</p></td><td><p class="newsDate">' + dateMessage1 + '</p></td>' +
 			'<tr><td></td><td class="buttons"><button class="btn btn-primary btn-space" onclick="editNews()">' + $("#buttonEdit").val() + '</button>' + 
-			'<button class="btn btn-primary btn-space" onclick="deleteNews()">' + $('#buttonRemove').val() + '</button></td></tr>'
+			'<button class="btn btn-primary btn-space" onclick="deleteNews()">' + $('#buttonRemove').val() + '</button></td></tr></table>'
 	).fadeIn();
 	$.each(news.comments, function(ind, comment) {
 		drawComment(comment);
 	})
 	$('#divAddComment').append(
-			'<table class="addComment"><tr><td colspan="3"><textarea id="commentText"></textarea></td></tr>' + 
+			'<table class="addComment"><tr><td colspan="3"><textarea rows="4" id="commentText"></textarea></td></tr>' + 
 			'<tr><td colspan="2"></td><td class="commentButton"><button class="btn btn-primary btn-space" onclick="addComment()">' + $('#addCommentButton').val() + '</button></td></tr></table>'
 	)
 }
@@ -88,7 +88,7 @@ function deleteNews() {
 
 function drawEditingNews() {
 	$('#newsTitle').empty().append(
-			'<input type="text" class="title" id="inputNewsTitle" value="' + currentNews.title + '"/>'
+			'<textarea rows="2" class="title form-control" id="inputNewsTitle">' + currentNews.title + '</textarea>'
 	);
 
 	var date = new Date();
@@ -97,11 +97,11 @@ function drawEditingNews() {
 	$('#newsDate').empty().append(formated_date);
 
 	$('#newsShortText').empty().append(
-			'<textarea id="textNewsShort" rows="5">' + currentNews.shortText + '</textarea>'
+			'<textarea id="textNewsShort" class="form-control" rows="5">' + currentNews.shortText + '</textarea>'
 	);
 
 	$('#newsFullText').empty().append(
-			'<textarea id="textNewsFull" rows="10">' + currentNews.fullText + '</textarea>'
+			'<textarea id="textNewsFull" class="form-control" rows="10">' + currentNews.fullText + '</textarea>'
 	);
 
 	var tags = "";
@@ -136,7 +136,7 @@ function cancelNews() {
 
 function drawAddingNews() {
 	$('#newsTitle').append(
-			'<input type="text" class="title" id="inputNewsTitle"/>'
+			'<input type="text" class="form-control title" id="inputNewsTitle"/>'
 	);
 
 	var date = new Date();
@@ -145,11 +145,11 @@ function drawAddingNews() {
 	$('#newsDate').append(formated_date);
 
 	$('#newsShortText').append(
-			'<textarea id="textNewsShort" rows="5"/>'
+			'<textarea id="textNewsShort" class="form-control" rows="5"/>'
 	);
 
 	$('#newsFullText').append(
-			'<textarea id="textNewsFull" rows="10"/>'
+			'<textarea id="textNewsFull" class="form-control" rows="10"/>'
 	);
 
 	drawAllTags();
@@ -160,10 +160,6 @@ function drawAddingNews() {
 			'<button  class="btn btn-primary btn-space" onclick="saveNews()">' + $('#buttonSave').val() + '</button>'
 	);
 	$("#editTable").show();
-}
-
-function drawComments(news) {
-
 }
 
 function drawAllTags() {
@@ -204,7 +200,7 @@ function drawAllAuthor() {
 		success : function(authorList) {
 			var authors = $('#selectAuthor');
 			$.each(authorList, function(ind, author) {
-				authors.append($("<option></option>")
+				authors.append($('<option class="authorOption"></option>')
 						.attr("value", author.id)
 						.text(author.name));
 			})
@@ -235,6 +231,7 @@ function saveNews() {
 		news.id = $("#news_id").val()
 		news.modificationDate = new Date();
 		news.creationDate = currentNews.creationDate;
+		news.comments = currentNews.comments;
 		$.ajax({
 			type : 'PUT',
 			url : SITE_URL + "/news",
@@ -266,10 +263,11 @@ function drawComment(comment) {
 	var dateFormat = $("#myDateFormat").val();
 	var date = moment(comment.creationDate).format(dateFormat)
 	$("#divComments").append(
-			'<table class="addComment" id = "commentTable' + comment.id + '"><tr><td class="commentText" colspan="3">' + comment.text + '</td></tr>' + 
+			'<table class="addComment" id = "commentTable' + comment.id + '">' + 
 			'<td class="commentDate">' + date + '</td>' + '<td></td>' + 
-			'<td class="commentButton"><button class="btn btn-primary btn-xs" onclick="deleteComment(' + comment.id + ')">' +
-			'<span class="glyphicon glyphicon-remove"></span></button></td></tr></table>'
+			'<td class="commentButton"><button class="btn btn-primary btn-xs comment" onclick="deleteComment(' + comment.id + ')">' +
+			'<span class="glyphicon glyphicon-remove"></span></button></td></tr>' + 
+			'<tr><td class="commentText" colspan="3">' + comment.text + '</td></tr></table><br>'
 	);
 }
 

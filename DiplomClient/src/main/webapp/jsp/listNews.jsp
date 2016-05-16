@@ -20,7 +20,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="<c:url value="/resources/js/lib/bootstrap-multiselect.js" />"></script>
 <script src="<c:url value="/resources/js/lib/moment.min.js" />"></script>
-<script src="<c:url value="/resources/js/newsList.js" />"></script>
+<script src="<c:url value="/resources/js/newsListClient.js" />"></script>
 </head>
 <body>
 		<table class="list">

@@ -17,19 +17,8 @@
 		<tr>
 			<td>
 				<ul>
-					<li><a href="${pageContext.request.contextPath}/admin/portal">
+					<li><a href="${pageContext.request.contextPath}/portal">
 							<spring:message code="menu.listNews" />
-					</a></li>
-					<li><a href="${pageContext.request.contextPath}/admin/addNews">
-							<spring:message code="menu.addNews" />
-					</a></li>
-					<li><a
-						href="${pageContext.request.contextPath}/admin/listAuthors"> <spring:message
-								code="menu.authors" />
-					</a></li>
-					<li><a
-						href="${pageContext.request.contextPath}/admin/listTags"> <spring:message
-								code="menu.tags" />
 					</a></li>
 				</ul>
 			</td>

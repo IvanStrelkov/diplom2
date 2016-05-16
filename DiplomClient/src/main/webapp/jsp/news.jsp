@@ -28,7 +28,7 @@
 <script
 	src="<c:url value="/resources/js/lib/bootstrap-multiselect.js" />"></script>
 <script src="<c:url value="/resources/js/lib/moment.min.js" />"></script>
-<script src="<c:url value="/resources/js/news.js" />"></script>
+<script src="<c:url value="/resources/js/newsClient.js" />"></script>
 </head>
 <body>
 	<input type="hidden" id="news_id" value="${news_id}">

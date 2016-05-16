@@ -21,14 +21,14 @@ $(document).ready(function(){
 
 function drawSaveAuthor() {
 	var addAuthor = $('#addAuthorDiv');
-	addAuthor.append('<table class="save"><tr><td>' + $('#addAuthor').val() + ': </td><td>' + 
-			'<input id=inputAuthor0 type="text" value="" size="30"></td>'+
+	addAuthor.append('<table class="save"><tr><td class = "propertyName">' + $('#addAuthor').val() + ': </td><td>' + 
+			'<input class="form-control" id="inputAuthor0" type="text" value="" size="30"></td>'+
 			'<td><button class= "btn btn-primary btn-space" onclick="saveAuthor()">' + $('#buttonSave').val() + '</button></td></tr></table>');
 }
 
 function drawAuthor(author) {
 	var authors = $('#listAuthorsDiv');
-	var part1 = '<table id="tableAuthor' + author.id + '" class="edit"><tr><td>' + $('#authorLabel').val() + ': </td><td>' + '<input id=inputAuthor' + author.id + ' type="text" value="' + 
+	var part1 = '<table id="tableAuthor' + author.id + '" class="edit"><tr><td class = "propertyName">' + $('#authorLabel').val() + ': </td><td>' + '<input class="form-control" id=inputAuthor' + author.id + ' type="text" value="' + 
 		author.name +'" size="30" disabled></td>';
 	var part2 = '<td><button class="btn btn-primary btn-space" id="buttonEdit' + author.id + '" onclick="editAuthor(' + author.id + ')">' + $('#buttonEdit').val() + '</button></td>'+
 		'<td> <button class="btn btn-primary btn-space" id="buttonUpdate' + author.id + '" hidden="true" onclick="updateAuthor(' + author.id + ')">' + $('#buttonUpdate').val() + '</button></td>' +

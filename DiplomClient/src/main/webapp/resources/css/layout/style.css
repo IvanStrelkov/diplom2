@@ -15,14 +15,14 @@ tr.border_bottom{
 }
 #border{
 	margin-left: 1%;
-	matgin-right: 1%;
+	margin-right: 1%;
 	border: 1px solid silver; 
 	height: 98%;
 	width: 98%;
 }
 #border-pagination{
 	margin-left: 1%;
-	margin-right: 1%;
+	matgin-right: 1%;
 	border-left: 1px solid silver; 
 	border-right: 1px solid silver;
 	border-bottom: 1px solid silver;

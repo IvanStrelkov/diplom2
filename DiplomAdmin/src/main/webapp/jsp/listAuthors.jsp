@@ -4,6 +4,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/lib/bootstrap.css"/>" />
 <link rel="stylesheet" href="<c:url value="/resources/css/listTags&Author.css"/>">
 <link rel="stylesheet" href="<c:url value="/resources/css/lib/bootstrap-multiselect.css"/>"/>
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.js"></script>

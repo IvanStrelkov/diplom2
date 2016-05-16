@@ -1,4 +1,4 @@
-var SITE_URL = 	"http://localhost:8080/DiplomAdmin/admin";
+var SITE_URL = 	"http://localhost:8080/DiplomClient";
 var search_start = 0;
 var search_count = 12;
 var authorId = 0;

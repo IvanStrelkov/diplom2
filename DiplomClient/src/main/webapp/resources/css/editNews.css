@@ -1,0 +1,13 @@
+table.edit{
+	width: 90%;
+	margin-left: 2%;
+	margin-top:	5%;
+	vertical-align: center;
+}
+
+table.edit textarea{
+	width: 100%;
+}
+input.title{
+	width: 100%;
+}
